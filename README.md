@@ -13,3 +13,6 @@ Dangerosity : Low (can be detected easily by the antivirus and the virus must be
 Note: He will be used as the main struct of my future malwares
 
 ## Linux Fake Login
+Description:
+This script will duplicate /bin/ in /tmp/bin/. He will replace `sudo` command by a fake payload. After, he modify .bashrc file and he close the terminal. When the user will start a new terminal and enter `sudo` he will have a fake authentication ask (realist) after he do that, his password will be stored in plain text in /tmp/bin/passw. You can add `cat /tmp/bin/passw | sudo -S COMMAND` to run what you in admin mode.
+
