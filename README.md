@@ -11,3 +11,5 @@ Sign: iWiiLkd..NVF
 Dangerosity : Low (can be detected easily by the antivirus and the virus must be executed by the user)
 
 Note: He will be used as the main struct of my future malwares
+
+## Linux Fake Login
